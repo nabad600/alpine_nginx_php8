@@ -26,7 +26,5 @@ jobs:
       run: php -m | grep mysqli
     - name: Composer test
       run: composer
-    - name: Laravel 8 test
+    - name: Laravel8 test
       run:  composer create-project --prefer-dist laravel/laravel:^8.0
-    - name: Laravel 7 test
-      run: composer create-project --prefer-dist laravel/laravel:^7.0

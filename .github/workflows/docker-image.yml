@@ -11,8 +11,13 @@ on:
 jobs:
 
   build:
+    name: Build
+    strategy:
+      matrix:
+        runs-on: [ubuntu-latest, macOS-latest, windows-latest]
+      fail-fast: false
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runs-on }}
 
     steps:
     - uses: actions/checkout@v2

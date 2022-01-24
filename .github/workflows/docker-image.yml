@@ -26,6 +26,8 @@ jobs:
       run: php -m | grep mysqli
     - name: Composer test
       run: composer
+    - name: Permission
+      run:  chmod -R 777 /var/www
     - name: Create index.php in /var/www/
       run:  'echo "<?php phpinfo(); ?>" >> /var/www/index.php'
     - name: Laravel8 test

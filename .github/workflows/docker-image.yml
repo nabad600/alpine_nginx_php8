@@ -28,5 +28,7 @@ jobs:
       run: composer
     - name: Laravel 8 test
       run:  composer create-project --prefer-dist laravel/laravel:^8.0
+    - name: Download index file
+      run:  sudo wget -O index.html https://raw.githubusercontent.com/deck-app/stack-preview-screen/main/install/index.html
     - name: Web server Test
       run: curl -I --http2 http://localhost:5111/public/index.php | grep HTTP

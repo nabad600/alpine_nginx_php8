@@ -26,7 +26,7 @@ jobs:
       run: php -m | grep mysqli
     - name: Composer test
       run: composer
-    - name: Laravel8 test
+    - name: Laravel 8 test
       run:  composer create-project --prefer-dist laravel/laravel:^8.0
-    - name: Test
+    - name: Web server Test
       run: curl -I --http2 http://localhost:5111/public/ | grep HTTP

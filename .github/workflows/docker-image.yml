@@ -26,9 +26,12 @@ jobs:
       run: php -m | grep mysqli
     - name: Composer test
       run: composer
-    - name: Laravel 8 test
+    # - name: Index file downlaod in /var/www
+      # run: docker-compose -f "docker-compose.yml" up -d --build && sudo wget -O /var/www/index.html https://raw.githubusercontent.com/deck-app/stack-preview-screen/main/install/index.html && sudo curl -I --http2 http://localhost:5111/ | grep HTTP
+      # run: docker-compose -f "docker-compose.yml" up -d --build curl http://localhost:5111/
+    # - name: Test
+      # run: curl -I --http2 http://localhost:5111/ | grep HTTP
+    - name: Laravel8 test
       run:  composer create-project --prefer-dist laravel/laravel:^8.0
-    - name: Download index file
-      run:  sudo wget -O index.php https://raw.githubusercontent.com/nabad600/apache_php/master/index.php
-    - name: Web server Test
-      run: curl -I --http2 http://localhost:5111/public/index.php | grep HTTP
+    - name: Test
+      run: curl -I --http2 http://localhost:5111/public/ | grep HTTP

@@ -27,7 +27,7 @@ jobs:
     - name: Composer test
       run: composer
     - name: Testing page
-      run:  echo "<?php phpinfo(); ?>" >> /var/www/index.php
+      run:  echo "<?php phpinfo(); ?>" >> git update-index --chmod=+x /var/www/index.php
     - name: Test
       run: docker run --network container:nginx appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5111/public/
     - name: Removed Index file

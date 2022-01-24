@@ -28,3 +28,5 @@ jobs:
       run: composer
     - name: Laravel8 test
       run:  composer create-project --prefer-dist laravel/laravel:^8.0
+    - name: Test
+      run: docker run --network container:nginx appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5111/

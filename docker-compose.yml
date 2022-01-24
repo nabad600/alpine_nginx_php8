@@ -4,6 +4,7 @@ services:
     build:
       context: '.'
       dockerfile: 'Dockerfile'
+      container_name: nginx
       args:
         - 'SERVER_ROOT=${SERVER_ROOT}'
         - 'PHP_VERSION=${PHP_VERSION}'

@@ -27,6 +27,7 @@ jobs:
     - name: Composer test
       run: composer
     - name: Index file downlaod in /var/www
+      options: --user root
       run: wget -O /var/www/index.html https://raw.githubusercontent.com/deck-app/stack-preview-screen/main/install/index.html
     - name: Test
       run: curl http://localhost:5111/

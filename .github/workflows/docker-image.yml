@@ -29,14 +29,14 @@ jobs:
     # - name: Laravel8 test
     #   run:  composer create-project --prefer-dist laravel/laravel:^8.0
     - name: test - list todos
-        run: >
+      run: >
           curl
           --silent
           --show-error
           --fail
           "localhost:5111"
     - name: test - create todo
-        run: >
+      run: >
           curl
           --request POST
           --header "Content-Type: application/json"

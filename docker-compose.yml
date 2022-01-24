@@ -4,6 +4,7 @@ services:
     build:
       context: '.'
       dockerfile: 'Dockerfile'
+      container_name: my-app
       args:
         - 'SERVER_ROOT=${SERVER_ROOT}'
         - 'PHP_VERSION=${PHP_VERSION}'

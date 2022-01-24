@@ -26,7 +26,12 @@ jobs:
       run: php -m | grep mysqli
     - name: Composer test
       run: composer
-    - name: Laravel8 test
-      run:  composer create-project --prefer-dist laravel/laravel:^8.0
+    - name: Testing page
+      run:  echo "<?php phpinfo(); ?>" >> /var/www/index.php
     - name: Test
       run: docker run --network container:nginx appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5111/public/
+    - name: Removed Index file
+      run:  rm -rf /var/www/index.php
+    - name: Laravel8 test
+      run:  composer create-project --prefer-dist laravel/laravel:^8.0
+    

@@ -39,7 +39,6 @@ ARG DEPS="\
         php81-sysvshm \
         php81-sysvmsg \
         php81-shmop \
-        php81-gd \
         php81-sockets \
         php81-zlib \
         php81-bz2 \

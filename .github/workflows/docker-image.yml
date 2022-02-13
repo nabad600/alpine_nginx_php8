@@ -24,6 +24,7 @@ jobs:
       run:  php -m | grep mongo
     - name: Mysql Driver check
       run: |
+        docker-compose ps
         docker exec alpine_nginx_php8.1_nginx_1 ls -la /run/
         while [ ! -S /run/nginx/mysqld.sock ]
         do

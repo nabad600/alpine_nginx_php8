@@ -23,7 +23,12 @@ jobs:
     - name: Mongodb driver check
       run:  php -m | grep mongo
     - name: Mysql Driver check
-      run: php -m | grep mysqli
+      run: |
+        while [ ! -S docker exec alpine_nginx_pgp8.1_nginx_1 ls -la /run/nginx/mysqld.sock ];
+        do
+          sleep 1s
+        done
+        php -m | grep mysqli
     - name: Composer test
       run: composer
     # - name: Index file downlaod in /var/www

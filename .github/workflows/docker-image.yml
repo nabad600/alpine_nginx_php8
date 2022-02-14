@@ -26,8 +26,8 @@ jobs:
       run: |
         docker-compose ps
         docker exec alpine_nginx_php81_nginx_1 ls -la /run/nginx/
-        echo $(docker exec alpine_nginx_php81_nginx_1 ls -la /run/nginx/)
-        while [ ! -S "docker exec alpine_nginx_php81_nginx_1 ls -la /run/nginx/nginx.pid" ]
+        
+        while [ ! -S echo $(docker exec alpine_nginx_php81_nginx_1 ls /run/nginx/nginx.pid) ]
         do
           sleep 1s
         done

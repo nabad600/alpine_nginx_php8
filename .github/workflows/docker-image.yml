@@ -27,11 +27,12 @@ jobs:
         docker-compose ps
         docker exec alpine_nginx_php81_nginx_1 ls -la /run/nginx/
         
-        while [ ! -S echo $(docker exec alpine_nginx_php81_nginx_1 ls /run/nginx/nginx.pid) ]
+        while [ ! -S "echo $(docker exec alpine_nginx_php81_nginx_1 ls /run/nginx/nginx.pid)" ]
         do
           sleep 1s
+          php -m | grep mysqli
         done
-        php -m | grep mysqli
+        
     - name: Composer test
       run: composer
     # - name: Index file downlaod in /var/www

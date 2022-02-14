@@ -60,7 +60,6 @@ ARG DEPS="\
         php81-pdo \
         php81-dev \
         php81-pear \
-        php81-intl \
         php81-dom \
         php81-fileinfo \
 "

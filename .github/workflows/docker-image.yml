@@ -26,6 +26,7 @@ jobs:
       run: |
         docker-compose ps
         docker exec alpine_nginx_php81_nginx_1 ls -la /run/nginx/
+        echo "test"
         while [ ! -S "docker exec alpine_nginx_php81_nginx_1 ls -la /run/nginx/nginx.pid" ]
         do
           sleep 1s

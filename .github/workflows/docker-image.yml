@@ -23,11 +23,8 @@ jobs:
     - name: Mongodb driver check
       run:  php -m | grep mongo
     - name: Mysql Driver check
-      run: |
-        docker-compose ps
-        docker exec alpine_nginx_php81_nginx_1 ls -la /run/nginx/
-        
-        while [ ! -S "echo $(docker exec alpine_nginx_php81_nginx_1 ls /run/nginx/nginx.pid)" ]
+      run: |       
+        while [ -S "echo $(docker exec alpine_nginx_php81_nginx_1 ls /run/nginx/nginx.pid)" ]
         do
           sleep 1s
           php -m | grep mysqli

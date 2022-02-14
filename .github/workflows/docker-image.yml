@@ -25,8 +25,8 @@ jobs:
     - name: Mysql Driver check
       run: |
         docker-compose ps
-        test = docker exec alpine_nginx_php81_nginx_1 ls -la /run/nginx/nginx.pid
-        while [ ! -S $test ]
+        docker exec alpine_nginx_php81_nginx_1 ls -la /run/nginx/
+        while [ ! -S "docker exec alpine_nginx_php81_nginx_1 ls -la /run/nginx/nginx.pid" ]
         do
           sleep 1s
         done

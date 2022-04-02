@@ -108,7 +108,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin -
 
 FROM scratch
 COPY --from=builder / /
-
+WORKDIR /var/www
 EXPOSE 80
 RUN chmod +x /sbin/runit-wrapper
 RUN chmod +x /sbin/runsvdir-start

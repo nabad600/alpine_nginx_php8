@@ -92,7 +92,7 @@ RUN ln -s /usr/bin/php81 /usr/bin/php
 
 # mongodb installation
 # RUN ln -s /usr/bin/phar81 /usr/bin/phar
-RUN apk add --no-cache gdbm libsasl snappy gcc make g++ zlib-dev php81-zip zip unzip php81-pecl-mongodb openssl openssl-dev curl openrc nano bash icu-libs p7zip git
+RUN apk add --no-cache gdbm libsasl snappy gcc make g++ zlib-dev php81-zip zip unzip php81-pecl-mongodb openssl openssl-dev curl openrc nano bash icu-libs p7zip git php81-intl
 # RUN apk add --no-cache php81-pecl-mongodb openssl openssl-dev curl openrc nano bash icu-libs p7zip
 RUN apk upgrade
 

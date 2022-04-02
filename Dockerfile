@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:edge AS builder
 LABEL maintainer Naba Das <hello@get-deck.com>
 ARG BUILD_DATE
 ARG VCS_REF
@@ -105,6 +105,9 @@ RUN apk upgrade
 # RUN apk add --no-cache composer
 # RUN composer self-update
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+
+FROM scratch
+COPY --from=builder / /
 
 EXPOSE 80
 RUN chmod +x /sbin/runit-wrapper
